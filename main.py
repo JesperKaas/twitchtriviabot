@@ -1323,7 +1323,7 @@ class Question(object):
             self.creator = ''
         else:
             self.question = str(row['question'][0]).upper() + row['question'][1:]
-            self.answers = [row['answer'],row['answer2']]
+            self.answers = [row['answer'],row['answer2'], row['answer3'], row['answer4'], row['answer5'], row['answer6'], row['answer7']]
             self.answers = [i for i in self.answers if i != '']
             self.category = row['category']
             if 'category' in row:
@@ -1331,7 +1331,7 @@ class Question(object):
 
         if self.session_config['mode'] == 'poll2':
             try:
-                answers_temp = [self.answers[0], self.answers[1]]
+                answers_temp = [self.answers[0], self.answers[1], self.answers[2], self.answers[3], self.answers[4], self.answers[5], self.answers[6]]
             except:
                 logging.debug("ERROR ON PARSING QUESTION WITH ANSWER/ANSWER2, CHECK TRIVIA SOURCE")
 

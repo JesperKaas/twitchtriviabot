@@ -793,9 +793,9 @@ class Session(object):
                 self.ts = {}
                 for idx, i in enumerate(data):
                     try:
-                        category, question, answer, answer2, creator = i
+                        category, question, answer, answer2, answer3, answer4, answer5, answer6, answer7, creator = i
                         if answer != '' and category != '' and question != '':
-                            self.ts[idx] = {'category':category, 'question':question, 'answer':answer,'answer2':answer2,'creator':creator}
+                            self.ts[idx] = {'category':category, 'question':question, 'answer':answer,'answer2':answer2, 'answer3':answer3, 'answer4':answer4, 'answer5':answer5, 'answer6':answer6, 'answer7':answer7,'creator':creator}
                         elif question.lower() != 'question':
                             logging.debug("Data line was ignored for csv header")
                         else:
